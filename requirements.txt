@@ -1,0 +1,38 @@
+# Academic Stress Prediction - Python dependencies
+# Install with:  pip install -r requirements.txt
+#
+# Only packages the project actually imports are listed. tkinter (Section 5's
+# dashboard) ships with the standard library and is not installable via pip; on
+# Debian/Ubuntu it comes from the system package `python3-tk`.
+
+# --- Core data handling and modelling ---------------------------------------
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+scipy>=1.11
+
+# scikit-learn is PINNED, not ranged, on purpose. The pipelines in models/ were
+# serialised with 1.6.1, and a pickled scikit-learn object is only guaranteed to
+# load under the version that wrote it - 1.8.0, for example, fails on them with
+# `AttributeError: Can't get attribute '_RemainderColsList'`. Either install this
+# version to use the committed artefacts, or regenerate them for your own
+# version with `python -m src.train`.
+scikit-learn==1.6.1
+
+joblib>=1.3
+
+# --- Visualisation -----------------------------------------------------------
+matplotlib>=3.8
+seaborn>=0.13
+
+# --- Section 2's external-module demonstration -------------------------------
+requests>=2.31
+
+# --- Optional, detected at import time ---------------------------------------
+# The notebook runs end to end without these; the XGBoost models and the SHAP
+# explainability plots are skipped with a printed notice if they are absent.
+xgboost>=2.0
+shap>=0.44
+
+# --- Running the notebook ----------------------------------------------------
+jupyterlab>=4.0
+ipykernel>=6.29

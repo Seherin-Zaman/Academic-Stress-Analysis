@@ -1,0 +1,63 @@
+# --- Jupyter -----------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+*-checkpoint.ipynb
+.jupyter/
+.virtual_documents/
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Virtual environments ----------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# --- Environment and secrets -------------------------------------------------
+# Nothing in this project needs credentials, but keeping these ignored means an
+# accidentally created env file can never be committed.
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# --- Tooling caches ----------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_convert/
+htmlcov/
+.coverage
+.coverage.*
+
+# --- OS / editor -------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# --- Project-specific --------------------------------------------------------
+# Scratch output. The tracked artefacts under models/ are small (a combined
+# ~810 KB) and are committed deliberately, so that the notebook's results can be
+# reproduced and the models loaded without retraining first.
+scratch/
+tmp/
+*.log
+
+# Exported notebook renderings are regenerated on demand rather than tracked.
+notebooks/*.html
+notebooks/*.pdf
